@@ -5,11 +5,11 @@ from __future__ import absolute_import
 
 from ...core.has_props import abstract
 from ...core.properties import Bool, String
-
+from ..styles import CSS3
 from .widget import Widget
 
 @abstract
-class Markup(Widget):
+class Markup(Widget, CSS3):
     ''' Base class for Bokeh models that represent HTML markup elements.
 
     Markups include e.g., ``<div>``, ``<p>``, and ``<pre>``.
