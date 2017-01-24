@@ -4,12 +4,12 @@
 from __future__ import absolute_import
 
 from ...core.has_props import abstract
-from ...core.properties import Bool, String
+from ...core.properties import Bool, String, Instance
 from .styles import Styles
 from .widget import Widget
 
 @abstract
-class Markup(Widget, Styles):
+class Markup(Widget):
     ''' Base class for Bokeh models that represent HTML markup elements.
 
     Markups include e.g., ``<div>``, ``<p>``, and ``<pre>``.
@@ -19,6 +19,8 @@ class Markup(Widget, Styles):
     text = String(default="", help="""
     The contents of the widget.
     """)
+
+    style = Instance(Styles, lambda: Styles())
 
 class Paragraph(Markup):
     ''' A block (paragraph) of text.
