@@ -49,7 +49,7 @@ export class AbstractSliderView extends WidgetView
         start: value
         step: step
         behaviour: @model.behaviour
-        connect: @model.connect
+        connect: @model.connected
         tooltips: tooltips
         orientation: @model.orientation
         direction: @model.direction
@@ -118,7 +118,7 @@ export class AbstractSlider extends Widget
   }
 
   behaviour: null
-  connect: false
+  connected: false
 
   _formatter: (value, format) -> "#{value}"
 
