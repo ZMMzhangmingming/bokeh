@@ -10,7 +10,7 @@ export class AbstractSliderView extends WidgetView
 
   initialize: (options) ->
     super(options)
-    @listenTo(@model, 'change', @render)
+    @connect(@model.change, () => @render())
     @render()
 
   _calc_to: () ->
