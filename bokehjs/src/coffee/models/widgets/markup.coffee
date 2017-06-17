@@ -11,7 +11,7 @@ export class MarkupView extends WidgetView
     super(options)
     @render()
     @connect(@model.change, () -> @render())
-    @listenTo(@model.style.change, () -> @render())
+    @connect(@model.style.change, () -> @render())
 
   render: () ->
     super()
