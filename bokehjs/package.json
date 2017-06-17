@@ -119,7 +119,7 @@
     "@types/hammerjs": "^2.0.33",
 
     "underscore.template": "^0.1.7",
-    "nouislider": "^9.2.0",
+    "nouislider": "^10.0.0",
     "jquery": "^2.1.1",
     "jquery-ui": "~1.10.5",
 
