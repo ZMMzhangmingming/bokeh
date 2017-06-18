@@ -17,3 +17,15 @@ class Widget(LayoutDOM):
     ''' A base class for all interactive widget types.
 
     '''
+
+class NeedsJQuery(object):
+    """ A mixin for widgets requiring JQuery and/or JQuery UI. """
+
+    __javascript__ = [
+        "https://code.jquery.com/jquery-3.2.1.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+    ]
+
+    __css__ = [
+        "https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css",
+    ]

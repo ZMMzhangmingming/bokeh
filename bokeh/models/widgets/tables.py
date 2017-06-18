@@ -10,16 +10,16 @@ from ...model import Model
 
 from ..sources import DataSource
 
-from .widget import Widget
+from .widget import Widget, NeedsJQuery
 
 @abstract
-class CellFormatter(Model):
+class CellFormatter(Model, NeedsJQuery):
     ''' Abstract base class for data table's cell formatters.
 
     '''
 
 @abstract
-class CellEditor(Model):
+class CellEditor(Model, NeedsJQuery):
     ''' Abstract base class for data table's cell editors.
 
     '''
@@ -330,7 +330,7 @@ class TableWidget(Widget):
     The source of data for the widget.
     """)
 
-class DataTable(TableWidget):
+class DataTable(TableWidget, NeedsJQuery):
     ''' Two dimensional grid for visualisation and editing large amounts
     of data.
 

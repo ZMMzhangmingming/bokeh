@@ -9,7 +9,7 @@ from ...core.properties import Bool, Date, Either, Enum, Float, Instance, Int, L
 
 from ..callbacks import Callback
 
-from .widget import Widget
+from .widget import Widget, NeedsJQuery
 
 @abstract
 class InputWidget(Widget):
@@ -52,7 +52,7 @@ class TextInput(InputWidget):
     """)
 
 
-class AutocompleteInput(TextInput):
+class AutocompleteInput(TextInput, NeedsJQuery):
     ''' Single-line input widget with auto-completion.
 
     '''
@@ -111,7 +111,7 @@ class MultiSelect(InputWidget):
     show less than 3 options.)
     """)
 
-class Slider(InputWidget):
+class Slider(InputWidget, NeedsJQuery):
     ''' Slider-based number selection widget.
 
     '''
@@ -154,7 +154,7 @@ class Slider(InputWidget):
     The "mouseup" policy is intended for scenarios in which the callback is expensive in time.
     """)
 
-class RangeSlider(InputWidget):
+class RangeSlider(InputWidget, NeedsJQuery):
     ''' Range-slider based range selection widget
 
     '''
@@ -198,7 +198,7 @@ class RangeSlider(InputWidget):
     """)
 
 
-class DateRangeSlider(InputWidget):
+class DateRangeSlider(InputWidget, NeedsJQuery):
     ''' Slider-based date range selection widget.
 
     '''
@@ -243,7 +243,7 @@ class DateRangeSlider(InputWidget):
     A callback to run in the browser whenever either slider's value changes.
     """)
 
-class DatePicker(InputWidget):
+class DatePicker(InputWidget, NeedsJQuery):
     ''' Calendar-based date picker widget.
 
     '''
